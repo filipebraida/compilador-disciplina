@@ -6,13 +6,17 @@ O Foca é o inicio do desenvolvimento de um compilador que é demonstrado na dis
 É necessário as ferramentas ``flex``, ``bison`` e ``gpp``
 
 ### Ubuntu 
-`` sudo apt install build-essential flex bison ``
+```console
+sudo apt install build-essential flex bison
+```
 
 ## Execução
 
 Foi criado um ``Makefile`` com os comandos para a execução e o arquivo exemplo.foca será direcionado para a entrar do compilador gerado ao final do script.
 
-``make``
+```console
+make
+```
 
 ## Vídeos
 
