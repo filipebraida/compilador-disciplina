@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+*.tab.c
+*.tab.h
+*.yy.c
+*.yy.h
+glf
