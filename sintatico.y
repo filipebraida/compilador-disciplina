@@ -32,11 +32,11 @@ string gentempcode();
 
 S 			: TK_TIPO_INT TK_MAIN '(' ')' BLOCO
 			{
-				std:string codigo = "/*Compilador FOCA*/\n"
-									"#include <iostream>\n"
-									"#include<string.h>\n"
-									"#include<stdio.h>\n"
-									"int main(void) {\n";
+				string codigo = "/*Compilador FOCA*/\n"
+								"#include <iostream>\n"
+								"#include<string.h>\n"
+								"#include<stdio.h>\n"
+								"int main(void) {\n";
 								
 				codigo += $5.traducao;
 								
