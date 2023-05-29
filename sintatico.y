@@ -32,7 +32,18 @@ string gentempcode();
 
 S 			: TK_TIPO_INT TK_MAIN '(' ')' BLOCO
 			{
-				cout << "/*Compilador FOCA*/\n" << "#include <iostream>\n#include<string.h>\n#include<stdio.h>\nint main(void)\n{\n" << $5.traducao << "\treturn 0;\n}" << endl; 
+				std:string codigo = "/*Compilador FOCA*/\n"
+									"#include <iostream>\n"
+									"#include<string.h>\n"
+									"#include<stdio.h>\n"
+									"int main(void) {\n";
+								
+				codigo += $5.traducao;
+								
+				codigo += 	"\treturn 0;"
+							"\n}";
+
+				cout << codigo << endl;
 			}
 			;
 
@@ -53,6 +64,9 @@ COMANDOS	: COMANDO COMANDOS
 			;
 
 COMANDO 	: E ';'
+			{
+				$$ = $1;
+			}
 			;
 
 E 			: E '+' E
@@ -92,7 +106,7 @@ int yyparse();
 string gentempcode()
 {
 	var_temp_qnt++;
-	return "t" + std::to_string(var_temp_qnt);
+	return "t" + to_string(var_temp_qnt);
 }
 
 int main(int argc, char* argv[])
